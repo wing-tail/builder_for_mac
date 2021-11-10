@@ -1,0 +1,18 @@
+homebrew_taps:
+  - homebrew/cask
+  - homebrew/core
+homebrew_packages:
+  - name: ansible
+  - name: awscli
+  - name: zsh-completions
+  - name: git
+  - name: ripgrep
+  - name: tig
+  - name: tree
+  - name: wget
+homebrew_casks:
+  - name: google-chrome
+  - name: google-cloud-sdk
+  - name: google-japanese-ime
+  - name: vagrant
+  - name: virtualbox

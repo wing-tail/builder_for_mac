@@ -1,4 +1,6 @@
 - hosts: localhost
   connection: local
   roles:
-    - hoge
+    - homebrew
+    - role: "{{ playbook_dir }}/../common/roles/vim"
+    - vim
