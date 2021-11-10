@@ -10,8 +10,6 @@
   copy: remote_src=true src=$HOME/Antares/colors/antares.vim dest=$HOME/.vim/colors/antares.vim
 - name: clean up
   file: path=$HOME/Antares state=absent
-- name: make vim after directory
-  file: path=$HOME/.vim/after state=directory
 - name: link vim after
   file: src="{{ role_path }}/files/after" dest=$HOME/.vim/after state=link
 - name: make vim setting directory
