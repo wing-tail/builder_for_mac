@@ -7,12 +7,15 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/deoplete.nvim')
 
 "以下、プラグインを列挙
 "call dein#add('{github.com/以下のリポジトリ名}')
@@ -20,7 +23,6 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('Townk/vim-autoclose')
-call dein#add('honza/vim-snippets')
 call dein#add('simeji/winresizer')
 call dein#add('jeffkreeftmeijer/vim-numbertoggle')
 call dein#add('tpope/vim-surround')
@@ -35,6 +37,7 @@ if dein#check_install()
 endif
 
 filetype plugin indent on
+let g:deoplete#enable_at_startup = 1
 
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp

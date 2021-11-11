@@ -1,11 +1,12 @@
-autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType scss setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "dein
 call dein#begin(expand('~/.vim/dein'))
 
 "以下、プラグインを列挙
 "call dein#add('{github.com/以下のリポジトリ名}')
-call dein#add('fatih/vim-go')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('AtsushiM/sass-compile.vim')
 
 call dein#end()
 
