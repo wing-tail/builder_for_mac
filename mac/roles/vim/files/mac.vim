@@ -3,7 +3,6 @@ call dein#begin(expand('~/.vim/dein'))
 
 "以下、プラグインを列挙
 "call dein#add('{github.com/以下のリポジトリ名}')
-call dein#add('ujihisa/neco-look')
 
 call dein#end()
 

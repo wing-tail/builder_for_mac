@@ -13,12 +13,14 @@ if !has('nvim')
 endif
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
+"以下、プラグインを列挙
+"call dein#add('{github.com/以下のリポジトリ名}')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/deoplete.nvim')
-
-"以下、プラグインを列挙
-"call dein#add('{github.com/以下のリポジトリ名}')
+call dein#add('Shougo/neco-vim')
+call dein#add('Shougo/neco-syntax')
+call dein#add('ujihisa/neco-look')
 call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
@@ -44,6 +46,7 @@ set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileformats=unix,dos,mac
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
+set backspace=indent,eol,start
 
 "モード表示はlightline任せ
 set noshowmode
