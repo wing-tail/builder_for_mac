@@ -9,10 +9,21 @@
 - name: homebrew packages install
   homebrew:
     name: "{{ item.name }}"
-    state: "{{ item.state | default('present') }}"
+    state: latest
+    install_options: "{{ item.install_options | default('') }}"
+  with_items: "{{ homebrew_packages }}"
+- name: unlink
+  homebrew:
+    name: "{{ item.name }}"
+    state: unlinked
+  with_items: "{{ homebrew_packages }}"
+- name: link
+  homebrew:
+    name: "{{ item.name }}"
+    state: linked
   with_items: "{{ homebrew_packages }}"
 - name: homebrew casks install
-  homebrew_cask: name={{ item.name }} state=installed
+  homebrew_cask: name={{ item.name }} state=latest
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   with_items: "{{ homebrew_casks }}"

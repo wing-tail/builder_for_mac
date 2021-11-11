@@ -10,6 +10,9 @@ homebrew_packages:
   - name: tig
   - name: tree
   - name: wget
+  - name: python3
+  - name: vim
+    install_options: with-python3
 homebrew_casks:
   - name: google-chrome
   - name: google-cloud-sdk
