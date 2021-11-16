@@ -3,5 +3,4 @@
   roles:
     - homebrew
     - pip
-    - "{{ playbook_dir }}/../common/roles/vim"
-    - vim
+    - "{{ playbook_dir }}/../linux/roles/vim"

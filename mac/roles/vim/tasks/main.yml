@@ -1,2 +1,0 @@
-- name: link vim setting
-  file: src="{{ role_path }}/files/mac.vim" dest=$HOME/.vim/setting/mac.vim state=link

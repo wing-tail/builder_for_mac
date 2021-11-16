@@ -11,11 +11,13 @@ homebrew_packages:
   - name: tree
   - name: wget
   - name: python3
+  - name: deno
   - name: vim
     install_options: with-python3
 homebrew_casks:
   - name: google-chrome
   - name: google-cloud-sdk
   - name: google-japanese-ime
+  - name: deepl
   - name: vagrant
   - name: virtualbox
