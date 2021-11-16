@@ -1,0 +1,57 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_if = '!has("nvim")'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo  = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo  = 'scrooloose/nerdtree'
+hook_add = '''
+  map <C-d> :NERDTreeToggle<CR>
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+'''
+
+[[plugins]]
+repo  = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+'''
+
+[[plugins]]
+repo  = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo  = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo  = 'simeji/winresizer'
+
+[[plugins]]
+repo  = 'jeffkreeftmeijer/vim-numbertoggle'
+
+[[plugins]]
+repo  = 'tpope/vim-surround'
+
+[[plugins]]
+repo  = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo  = 'tomtom/tcomment_vim'

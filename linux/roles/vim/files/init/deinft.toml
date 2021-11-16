@@ -1,0 +1,45 @@
+[ftplugin]
+php = '''
+setlocal tabstop=4 softtabstop=4 shiftwidth=4
+'''
+
+html = '''
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
+'''
+
+scss = '''
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
+'''
+
+go = '''
+setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+highlight default link goErr WarningMsg
+match goErr /\<err\>/
+'''
+
+vim = '''
+setlocal shiftwidth=2 softtabstop=2
+setlocal iskeyword+=:,#
+setlocal indentkeys+=\\,endif,endfunction,endfor,endwhile,endtry
+let b:echodoc_enabled = v:true
+'''
+
+toml = '''
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
+let b:echodoc_enabled = v:true
+'''
+
+ruby = '''
+setlocal shiftwidth=2 softtabstop=2 tabstop=2
+setlocal iskeyword+=!
+setlocal iskeyword+=?
+setlocal omnifunc=
+'''
+
+typescript = '''
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
+'''
+
+yaml = '''
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
+'''

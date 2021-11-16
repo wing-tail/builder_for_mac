@@ -1,0 +1,54 @@
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+on_cmd = 'Vinarise'
+hook_add = '''
+  let g:vinarise_enable_auto_detect = v:true
+  let g:vinarise_guifont = 'Courier\ 10\ Pitch:h14'
+'''
+
+[[plugins]]
+repo = 'kana/vim-niceblock'
+on_map = {x = '<Plug>'}
+hook_add = '''
+  xmap I  <Plug>(niceblock-I)
+  xmap A  <Plug>(niceblock-A)
+'''
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+on_event = 'InsertEnter'
+hook_source = '''
+  call echodoc#enable()
+  let g:echodoc#type = has('nvim') ? 'floating' : 'popup'
+'''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['php', 'html', 'js', 'css', 'scss']
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = ['php', 'html', 'js', 'css', 'scss']
+
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+on_ft = ['php', 'html', 'js', 'css', 'scss']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['php', 'html', 'js', 'css', 'scss']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript']
