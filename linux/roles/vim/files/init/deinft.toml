@@ -1,3 +1,7 @@
+hook_add = '''
+autocmd BufEnter,BufRead,BufNewFile {Gemfile,Vagrantfile,Berksfile} setlocal ft=ruby
+'''
+
 [ftplugin]
 php = '''
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
