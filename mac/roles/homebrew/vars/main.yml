@@ -4,20 +4,20 @@ homebrew_taps:
 homebrew_packages:
   - name: ansible
   - name: awscli
-  - name: zsh-completions
+  - name: deno
   - name: git
+  - name: python3
   - name: ripgrep
   - name: tig
   - name: tree
-  - name: wget
-  - name: python3
-  - name: deno
   - name: vim
     install_options: with-python3
+  - name: wget
+  - name: zsh-completions
 homebrew_casks:
+  - name: deepl
   - name: google-chrome
   - name: google-cloud-sdk
   - name: google-japanese-ime
-  - name: deepl
   - name: vagrant
   - name: virtualbox
