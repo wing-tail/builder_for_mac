@@ -1,2 +1,2 @@
-[vagrants]
-  192.168.56.2 ansible_python_interpreter=auto_silent
+[localhost]
+  127.0.0.1 ansible_python_interpreter=auto_silent
