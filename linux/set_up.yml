@@ -1,4 +1,6 @@
-- hosts: vagrants
-  user: vagrant
+- hosts: localhost
+  connection: local
   roles:
+    - homebrew
     - vim
+    - aws

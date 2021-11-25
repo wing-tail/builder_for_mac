@@ -1,0 +1,10 @@
+homebrew_taps:
+  - homebrew/core
+homebrew_packages:
+  - name: deno
+  - name: git
+  - name: ripgrep
+  - name: tig
+  - name: tree
+  - name: python3
+  - name: vim

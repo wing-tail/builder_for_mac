@@ -1,0 +1,24 @@
+- name: update
+  homebrew:
+    update_homebrew: yes
+- name: homebrew tap
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_taps }}"
+- name: homebrew packages install
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+    install_options: "{{ item.install_options | default('') }}"
+  with_items: "{{ homebrew_packages }}"
+- name: unlink
+  homebrew:
+    name: "{{ item.name }}"
+    state: unlinked
+  with_items: "{{ homebrew_packages }}"
+- name: link
+  homebrew:
+    name: "{{ item.name }}"
+    state: linked
+  with_items: "{{ homebrew_packages }}"
