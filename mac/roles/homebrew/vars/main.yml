@@ -3,7 +3,6 @@ homebrew_taps:
   - homebrew/core
 homebrew_packages:
   - name: ansible
-  - name: awscli
   - name: deno
   - name: git
   - name: python3
