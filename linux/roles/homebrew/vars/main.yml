@@ -1,10 +1,12 @@
 homebrew_taps:
   - homebrew/core
 homebrew_packages:
+  - name: ansible
   - name: deno
+  - name: docker
   - name: git
+  - name: python3
   - name: ripgrep
   - name: tig
   - name: tree
-  - name: python3
   - name: vim
