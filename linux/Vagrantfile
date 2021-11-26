@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/contrib-buster64"
+  config.vm.network "private_network", ip: "192.168.56.2"
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.cpus = 2
+    vb.memory = 4096
+  end
+  config.vm.provision "shell",
+    inline: "apt update && apt install -y git build-essential"
+  config.vm.provision "shell",
+    inline: "sh /vagrant/set_up.sh",
+    privileged: false
+end
