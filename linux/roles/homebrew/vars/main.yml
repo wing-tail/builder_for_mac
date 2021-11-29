@@ -5,6 +5,7 @@ homebrew_packages:
   - name: deno
   - name: docker
   - name: git
+  - name: nodebrew
   - name: python3
   - name: ripgrep
   - name: tig

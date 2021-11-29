@@ -1,0 +1,16 @@
+- name: homebrew packages install
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+    install_options: "{{ item.install_options | default('') }}"
+  with_items: "{{ packages }}"
+- name: unlink
+  homebrew:
+    name: "{{ item.name }}"
+    state: unlinked
+  with_items: "{{ packages }}"
+- name: link
+  homebrew:
+    name: "{{ item.name }}"
+    state: linked
+  with_items: "{{ packages }}"

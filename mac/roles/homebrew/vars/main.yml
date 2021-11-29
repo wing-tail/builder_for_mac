@@ -15,7 +15,6 @@ homebrew_packages:
 homebrew_casks:
   - name: deepl
   - name: google-chrome
-  - name: google-cloud-sdk
   - name: google-japanese-ime
   - name: vagrant
   - name: virtualbox
