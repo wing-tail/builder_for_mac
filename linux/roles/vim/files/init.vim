@@ -22,22 +22,24 @@ let g:dein#lazy_rplugins = v:true
 let g:dein#install_progress_type = 'title'
 let g:dein#install_check_diff = v:true
 let g:dein#enable_notification = v:true
+let g:dein#auto_recache = v:true
 
 let s:path = $CACHE . '/dein'
+let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/init/'
+let $RC_DIR = s:base_dir . '/rc/'
+let $DDC_DIR = s:base_dir . '/ddc/'
 if dein#min#load_state(s:path)
-  let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/init/'
-  let g:dein#inline_vimrcs = [s:base_dir . 'autocmd.vim', s:base_dir . 'options.vim', s:base_dir . 'mappings.vim']
+  let g:dein#inline_vimrcs = [$RC_DIR . 'autocmd.vim', $RC_DIR . 'options.vim', $RC_DIR . 'mappings.vim']
 
   let s:dein_toml = s:base_dir . 'dein.toml'
   let s:dein_lazy_toml = s:base_dir . 'deinlazy.toml'
-  let s:dein_ddc_toml = s:base_dir . 'ddc.toml'
   let s:dein_ft_toml = s:base_dir . 'deinft.toml'
 
   call dein#begin(s:path, [expand('<sfile>'), s:dein_toml, s:dein_lazy_toml, s:dein_ft_toml])
 
   call dein#load_toml(s:dein_toml, {'lazy': 0})
   call dein#load_toml(s:dein_lazy_toml, {'lazy' : 1})
-  call dein#load_toml(s:dein_ddc_toml, {'lazy' : 1})
+  call dein#load_toml($DDC_DIR . 'ddc.toml', {'lazy' : 1})
   call dein#load_toml(s:dein_ft_toml)
 
   call dein#end()

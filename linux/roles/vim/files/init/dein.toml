@@ -2,6 +2,9 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
 on_if = '!has("nvim")'
 
@@ -16,8 +19,14 @@ build = 'make'
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
 repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
+depends = ['context_filetype.vim', 'vim-textobj-user', 'vim-quickrun']
 
 [[plugins]]
 repo  = 'scrooloose/nerdtree'

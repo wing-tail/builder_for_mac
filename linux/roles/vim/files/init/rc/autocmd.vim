@@ -7,6 +7,7 @@ function! SetVisualize()
     filetype detect
   endif
 endfunction
+
 augroup AutoVisualize
   autocmd!
   autocmd FileType,Syntax,BufNewFile,BufNew,BufRead *? call SetVisualize()
@@ -19,11 +20,13 @@ augroup END
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
+
+augroup ZenkakuSpace
+  autocmd!
+  autocmd ColorScheme * call ZenkakuSpace()
+  autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+augroup END
+
 if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
   call ZenkakuSpace()
 endif
