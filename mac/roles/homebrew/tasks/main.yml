@@ -1,29 +1,29 @@
 - name: update
-  homebrew:
+  community.general.homebrew:
     update_homebrew: yes
 - name: homebrew tap
-  homebrew_tap:
+  community.general.homebrew_tap:
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_taps }}"
 - name: homebrew packages install
-  homebrew:
+  community.general.homebrew:
     name: "{{ item.name }}"
     state: latest
     install_options: "{{ item.install_options | default('') }}"
   with_items: "{{ homebrew_packages }}"
 - name: unlink
-  homebrew:
+  community.general.homebrew:
     name: "{{ item.name }}"
     state: unlinked
   with_items: "{{ homebrew_packages }}"
 - name: link
-  homebrew:
+  community.general.homebrew:
     name: "{{ item.name }}"
     state: linked
   with_items: "{{ homebrew_packages }}"
 - name: homebrew casks install
-  homebrew_cask: name={{ item.name }} state=latest
+  community.general.homebrew_cask: name={{ item.name }} state=latest
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   with_items: "{{ homebrew_casks }}"
