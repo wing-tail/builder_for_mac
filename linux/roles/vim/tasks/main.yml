@@ -6,15 +6,21 @@
   copy: remote_src=true src=$HOME/Antares/colors/antares.vim dest=$HOME/.vim/colors/antares.vim
 - name: clean up
   file: path=$HOME/Antares state=absent
-- name: make setting directory
-  file: path=$HOME/.vim/setting state=directory
-- name: link vim initial setting
-  file: src="{{ role_path }}/files/init" dest=$HOME/.vim/setting/init state=link
-- name: link vim initial setting
-  file: src="{{ role_path }}/files/init.vim" dest=$HOME/.vim/setting/init.vim state=link
+- name: make vscode syntax highlight directory
+  file: path=$HOME/.cache/scorpeon state=directory
+- name: get vscode extensions
+  git: repo=https://github.com/microsoft/vscode.git dest=$HOME/vscode
+- name: set vscode extensions
+  copy: remote_src=true src=$HOME/vscode/extensions dest=$HOME/.cache/scorpeon/extensions
+- name: clean up
+  file: path=$HOME/vscode state=absent
+- name: get nim extensions
+  git: repo=https://github.com/saem/vscode-nim.git dest=$HOME/.cache/scorpeon/extensions/nim
+- name: link vim setting
+  file: src="{{ role_path }}/files/setting" dest=$HOME/.vim/setting state=link
 - name: remove setting
   file: path=$HOME/.vimrc state=absent
 - name: make vimrc
   copy:
-    content: 'runtime! setting/*.vim'
+    content: 'runtime! setting/vimrc'
     dest: $HOME/.vimrc

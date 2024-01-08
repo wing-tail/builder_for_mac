@@ -1,0 +1,35 @@
+if &compatible
+  set nocompatible
+endif
+
+augroup Base
+  autocmd!
+augroup END
+
+command! -nargs=* -complete=augroup MyAutoCmd autocmd Base <args>
+
+" Show title.
+set title titlelen=95
+" Title string.
+let &g:titlestring = [
+      \   "%{'%:p:~:.'->expand()}",
+      \   "%<\(%{getcwd()->fnamemodify(':~')}\)",
+      \   "%(%y%m%r%)",
+      \ ]->join()
+
+colorscheme antares
+
+let $BASE_DIR = '<sfile>'->expand()->fnamemodify(':h')
+let $RC_DIR = $BASE_DIR .. '/rc'
+let $DPP_DIR = $BASE_DIR .. '/dpp'
+let $DDC_DIR = $BASE_DIR .. '/ddc'
+let $DDU_DIR = $BASE_DIR .. '/ddu'
+execute 'source' $DPP_DIR .. '/dpp.vim'
+
+if !argv()->empty() && execute('filetype') =~# 'OFF'
+  silent! filetype plugin indent on
+  syntax enable
+  filetype detect
+endif
+
+set secure
