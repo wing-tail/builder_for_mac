@@ -52,14 +52,14 @@ repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim', 'vim-textobj-user', 'vim-quickrun']
 
 [[plugins]]
-repo  = 'scrooloose/nerdtree'
+repo = 'scrooloose/nerdtree'
 hook_add = '''
   map <C-d> :NERDTreeToggle<CR>
   MyAutoCmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 '''
 
 [[plugins]]
-repo  = 'nathanaelkane/vim-indent-guides'
+repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_auto_colors = 0
@@ -68,7 +68,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo  = 'itchyny/lightline.vim'
+repo = 'itchyny/lightline.vim'
 hook_add = '''
   "モード表示はlightline任せ
   set noshowmode
@@ -89,22 +89,22 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo  = 'Townk/vim-autoclose'
+repo = 'Townk/vim-autoclose'
 
 [[plugins]]
-repo  = 'simeji/winresizer'
+repo = 'simeji/winresizer'
 
 [[plugins]]
-repo  = 'jeffkreeftmeijer/vim-numbertoggle'
+repo = 'jeffkreeftmeijer/vim-numbertoggle'
 
 [[plugins]]
-repo  = 'tpope/vim-surround'
+repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo  = 'bronson/vim-trailing-whitespace'
+repo = 'bronson/vim-trailing-whitespace'
 hook_add = '''
   MyAutoCmd BufWritePre * :FixWhitespace
 '''
 
 [[plugins]]
-repo  = 'tomtom/tcomment_vim'
+repo = 'tomtom/tcomment_vim'
