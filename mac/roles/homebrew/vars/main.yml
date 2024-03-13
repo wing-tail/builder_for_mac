@@ -26,3 +26,4 @@ homebrew_casks:
   - name: google-chrome
   - name: google-japanese-ime
   - name: texturepacker
+  - name: visual-studio-code
