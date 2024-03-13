@@ -12,11 +12,6 @@
     state: latest
     install_options: "{{ item.install_options | default('') }}"
   with_items: "{{ homebrew_packages }}"
-- name: unlink
-  community.general.homebrew:
-    name: "{{ item.name }}"
-    state: unlinked
-  with_items: "{{ homebrew_packages }}"
 - name: link
   community.general.homebrew:
     name: "{{ item.name }}"
