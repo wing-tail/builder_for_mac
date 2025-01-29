@@ -109,8 +109,6 @@ cnoremap <C-q> <Cmd>call ddu#start(#{
   \   },
   \ })<CR><Cmd>call setcmdline('')<CR><CR>
 
-call ddu#load('ui', ['ff'])
-call ddu#load('kind', ['file'])
 " }}}
 
 " hook_source {{{

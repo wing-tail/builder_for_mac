@@ -14,11 +14,6 @@ type Params = Record<string, unknown>;
 
 export class Config extends BaseConfig {
   override config(args: ConfigArguments): Promise<void> {
-    args.setAlias("source", "file_rg", "file_external");
-    args.setAlias("source", "file_git", "file_external");
-    args.setAlias("filter", "matcher_ignore_current_buffer", "matcher_ignores");
-    args.setAlias("action", "tabopen", "open");
-
     args.contextBuilder.patchGlobal({
       ui: "ff",
       profile: false,
@@ -132,6 +127,15 @@ export class Config extends BaseConfig {
             "--no-messages",
           ],
           updateItems: 50000,
+        },
+        file_external: {
+          cmd: ["fd", ".", "-H", "-E", "__pycache__", "-t", "f"],
+        },
+        directory_rec: {
+          cmd: ["fd", ".", "-H", "-t", "d"],
+        },
+        ghq: {
+          cmd: ["ghq", "list", "-p"],
         },
       },
       filterParams: {

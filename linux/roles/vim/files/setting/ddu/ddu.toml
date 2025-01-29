@@ -71,6 +71,10 @@ repo = 'matsui54/ddu-source-help'
 on_source = 'ddu.vim'
 
 [[plugins]]
+repo = 'shun/ddu-source-buffer'
+on_source = 'ddu.vim'
+
+[[plugins]]
 repo = 'shun/ddu-source-rg'
 on_source = 'ddu.vim'
 
@@ -84,6 +88,14 @@ on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'yuki-yano/ddu-source-nvim-notify'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = '4513echo/ddu-source-colorscheme'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = '4513echo/ddu-source-ghq'
 on_source = 'ddu.vim'
 
 [[plugins]]

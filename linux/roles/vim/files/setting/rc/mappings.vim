@@ -17,8 +17,12 @@ nnoremap <expr> q
 " }}}
 
 " 行移動 {{{
+nnoremap j gj
+nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up>   gk
+nnoremap gj j
+nnoremap gk k
 " }}}
 
 " インデント {{{
@@ -65,4 +69,16 @@ nnoremap <silent><expr> <Leader>h
 
 command! WordCount echo getline(1, '$')->join()->strchars()
 nnoremap <Leader>w <Cmd>WordCount<CR>
+" }}}
+
+" ヤンク {{{
+nnoremap y y:call setreg('+', getreg('"'))<CR>
+nnoremap yy yy:call setreg('+', getreg('"'))<CR>
+vnoremap y y:call setreg('+', getreg('"'))<CR>
+
+" }}}
+
+" ペースト {{{
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 " }}}
