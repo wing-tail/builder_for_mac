@@ -23,6 +23,10 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
+xnoremap j gj
+xnoremap k gk
+xnoremap gj j
+xnoremap gk k
 " }}}
 
 " インデント {{{
