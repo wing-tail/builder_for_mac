@@ -2,4 +2,4 @@
   connection: local
   roles:
     - homebrew
-    - "{{ playbook_dir }}/../linux/roles/vim"
+    - vim

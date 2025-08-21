@@ -1,30 +1,69 @@
 # Builder for Mac
 
 ## 概要
-Docker Desktopが有料化されるに当たって、サービスが料金に見合っていないため、Mac向けにDockerが動く仮想環境を準備します。
+Macの開発環境を自動構築するスクリプトです。
+Docker Desktopはサービスが料金に見合っていないため、Colima + Dockerでコンテナ環境を構築します。
 
-## 構成
-- Mac上に仮想マシンを立ち上げ、そこに入って開発を行う想定です。
-- ディレクトリ構成は以下のようになっています。
-  - mac
-    - macOSに開発用仮想マシンなどを導入するAnsibleスクリプトを収めたディレクトリです。
-    - homebrew, git, ansibleがインストールされているMac環境で用います。
-  - linux
-    - Debianでの実行を想定した環境構築用シェルスクリプト、およびAnsibleスクリプトを収めたディレクトリです。
-    - Debian仮想環境を立てるためのVagrantfileも含まれているので、これをコピーするだけで開発用のプロジェクトディレクトリが作成できます。
-    - Debian上であれば環境構築用シェルスクリプトを直接実行することも可能です。
+## 前提条件
+- macOS
+- Homebrew、Git、Ansibleがインストール済み
 
-## 実行例
+## ディレクトリ構成
+
+```
+builder_for_mac/
+├── README.md      # このファイル
+├── roles/
+│   ├── homebrew/  # パッケージ管理
+│   └── vim/       # Vim設定
+├── inventory/
+│   └── hosts      # Ansibleインベントリ
+└── set_up.yml     # メインのプレイブック
+```
+
+## セットアップ
 
 ```sh
+# Homebrewのインストール（未インストールの場合）
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# 実行結果の標準出力に記載のパス用コマンドを実行
-$ brew install git
-$ brew install ansible
+
+# 必要なツールのインストール
+$ brew install git ansible
+
+# このリポジトリのクローン
 $ git clone https://github.com/wing-tail/builder_for_mac.git
 $ cd builder_for_mac
-$ ansible-playbook -i mac/inventory mac/set_up.yml
-$ cp -r linux ~/project
-$ cd ~/project
-$ vagrant up
+
+# 環境構築の実行
+$ ansible-playbook -i inventory set_up.yml
 ```
+
+## colima 起動コマンド
+`.zshrc` に記載しておくと自動起動になります。
+
+```sh
+colima start --vm-type vz --vz-rosetta --profile x64 --arch x86_64 --cpu 8 --memory 16 --disk 256 --mount-type virtiofs --mount "~/workspace/colima:w" --dns 8.8.8.8
+```
+
+## 設定概要
+
+### Homebrewパッケージ
+- 開発ツール: vim, ripgrep, tig, tree, jq, wget
+- Docker関連: docker, docker-compose, colima
+- クラウドCLI: awscli
+- その他の開発/ユーティリティアプリ
+
+### Homebrewアプリケーション（Cask）
+- kitty (ターミナルエミュレータ)
+- Visual Studio Code
+- Cursor
+- Google Chrome
+- DeepL
+- その他の開発/ユーティリティアプリ
+
+### Vim設定
+- dpp.vim (プラグインマネージャー)
+- ddc.vim (自動補完)
+- ddu.vim (ファジーファインダー)
+- denops.vim (Deno統合)
+- その他の最新設定
