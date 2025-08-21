@@ -15,11 +15,13 @@ homebrew_packages:
   - name: docker
   - name: docker-compose
   - name: colima
+  - name: lima-additional-guestagents
   - name: jq
   - name: awscli
-  - name: rustup-init
+  - name: rustup
   - name: nodebrew
   - name: poetry
+  - name: go
 homebrew_casks:
   - name: kitty
   - name: deepl
@@ -27,3 +29,4 @@ homebrew_casks:
   - name: google-japanese-ime
   - name: texturepacker
   - name: visual-studio-code
+  - name: cursor
