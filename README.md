@@ -43,6 +43,9 @@ $ ansible-playbook -i inventory set_up.yml
 
 ```sh
 colima start --vm-type vz --vz-rosetta --profile x64 --arch x86_64 --cpu 8 --memory 16 --disk 256 --mount-type virtiofs --mount "~/workspace/colima:w" --dns 8.8.8.8
+
+# colimaが起動していればdockerコマンドで普通にコンテナを起動できる
+docker-compose up -d
 ```
 
 ## 設定概要
