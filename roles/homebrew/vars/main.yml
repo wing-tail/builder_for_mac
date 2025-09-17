@@ -30,3 +30,4 @@ homebrew_casks:
   - name: texturepacker
   - name: visual-studio-code
   - name: cursor
+  - name: claude-code
