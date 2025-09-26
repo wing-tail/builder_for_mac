@@ -1,11 +1,6 @@
 - name: update
   community.general.homebrew:
     update_homebrew: yes
-- name: homebrew tap
-  community.general.homebrew_tap:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ homebrew_taps }}"
 - name: homebrew packages install
   community.general.homebrew:
     name: "{{ item.name }}"
@@ -17,8 +12,22 @@
     name: "{{ item.name }}"
     state: linked
   with_items: "{{ homebrew_packages }}"
+- name: Create askpass script for installer
+  copy:
+    content: |
+      #!/bin/bash
+      echo "{{ sudo_password }}"
+    dest: /tmp/askpass.sh
+    mode: '0700'
 - name: homebrew casks install
-  community.general.homebrew_cask: name={{ item.name }} state=latest
+  homebrew_cask:
+    name: "{{ item.name }}"
+    state: latest
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+    SUDO_ASKPASS: /tmp/askpass.sh
   with_items: "{{ homebrew_casks }}"
+- name: Clean up askpass script
+  file:
+    path: /tmp/askpass.sh
+    state: absent

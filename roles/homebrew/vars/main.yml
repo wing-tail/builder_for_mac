@@ -1,10 +1,8 @@
-homebrew_taps:
-  - homebrew/cask
-  - homebrew/core
 homebrew_packages:
   - name: ansible
   - name: deno
   - name: git
+  - name: pre-commit
   - name: python3
   - name: ripgrep
   - name: tig
@@ -22,6 +20,7 @@ homebrew_packages:
   - name: nodebrew
   - name: poetry
   - name: go
+  - name: codex
 homebrew_casks:
   - name: kitty
   - name: deepl
