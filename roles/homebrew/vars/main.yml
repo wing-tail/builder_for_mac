@@ -23,7 +23,6 @@ homebrew_packages:
   - name: codex
 homebrew_casks:
   - name: kitty
-  - name: deepl
   - name: google-chrome
   - name: google-japanese-ime
   - name: texturepacker
