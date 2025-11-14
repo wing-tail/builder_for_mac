@@ -32,6 +32,7 @@ $ echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
 
 # 必要なツールのインストール
 $ brew install git ansible
+$ softwareupdate --install-rosetta --agree-to-license
 
 # このリポジトリのクローン
 $ git clone https://github.com/wing-tail/builder_for_mac.git
