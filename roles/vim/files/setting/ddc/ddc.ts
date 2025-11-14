@@ -77,10 +77,10 @@ export class Config extends BaseConfig {
           isVolatile: true,
           forceCompletionPattern: "\\S/\\S*",
         },
-        "shell-history": {
+        "shell_history": {
           mark: "history",
         },
-        "shell-native": {
+        "shell_native": {
           mark: "sh",
           isVolatile: true,
           forceCompletionPattern: "\\S/\\S*",
@@ -104,7 +104,10 @@ export class Config extends BaseConfig {
         file: {
           filenameChars: "[:keyword:].",
         },
-        "shell-native": {
+        "shell_history": {
+          paths: ['~/.zsh-history'],
+        },
+        "shell_native": {
           shell: "zsh",
         },
       },
@@ -144,7 +147,7 @@ export class Config extends BaseConfig {
           },
         },
         sources: [
-          "shell-native",
+          "shell_native",
           "around",
         ],
       });
@@ -152,8 +155,8 @@ export class Config extends BaseConfig {
     args.contextBuilder.patchFiletype("deol", {
       specialBufferCompletion: true,
       sources: [
-        "shell-native",
-        "shell-history",
+        "shell_native",
+        "shell_history",
         "around",
       ],
       sourceOptions: {

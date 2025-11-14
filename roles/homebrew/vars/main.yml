@@ -3,7 +3,6 @@ homebrew_packages:
   - name: deno
   - name: git
   - name: pre-commit
-  - name: python3
   - name: ripgrep
   - name: tig
   - name: tree
@@ -16,11 +15,10 @@ homebrew_packages:
   - name: lima-additional-guestagents
   - name: jq
   - name: awscli
-  - name: rustup
-  - name: nodebrew
-  - name: poetry
   - name: go
-  - name: codex
+  - name: rustup
+  - name: fnm
+  - name: uv
 homebrew_casks:
   - name: kitty
   - name: google-chrome
@@ -29,3 +27,4 @@ homebrew_casks:
   - name: visual-studio-code
   - name: cursor
   - name: claude-code
+  - name: codex

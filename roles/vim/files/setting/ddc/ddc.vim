@@ -17,7 +17,7 @@ function! CommandlinePre(mode) abort
     call ddc#custom#set_context_buffer({ ->
           \ getcmdline()->stridx('!') ==# 0 ? {
           \   'cmdlineSources': [
-          \     'shell-native', 'cmdline', 'cmdline-history', 'around',
+          \     'shell_native', 'cmdline', 'cmdline-history', 'around',
           \   ],
           \ } : {} })
   endif
