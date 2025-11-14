@@ -27,6 +27,9 @@ builder_for_mac/
 # Homebrewのインストール（未インストールの場合）
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Homebrewのパスを通す（パスが変更になっている可能性があるのでインストール時の表示に注意）
+$ echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
+
 # 必要なツールのインストール
 $ brew install git ansible
 
@@ -36,6 +39,10 @@ $ cd builder_for_mac
 
 # 環境構築の実行
 $ ansible-playbook -i inventory set_up.yml
+
+# 必要な設定の追加
+$ echo 'eval "$(fnm env --use-on-cd --shell bash)"' >> ~/.zshrc
+$ echo 'alias ssh="kitty +kitten ssh"' >> ~/.zshrc
 ```
 
 ## colima 起動コマンド
