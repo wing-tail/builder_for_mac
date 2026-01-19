@@ -1,0 +1,16 @@
+- name: make schema directory
+  file: path=$HOME/.vim/colors state=directory
+- name: get schema
+  git: repo=https://github.com/Haron-Prime/Antares.git dest=$HOME/Antares
+- name: set schema Antares
+  copy: remote_src=true src=$HOME/Antares/colors/antares.vim dest=$HOME/.vim/colors/antares.vim
+- name: clean up
+  file: path=$HOME/Antares state=absent
+- name: link vim setting
+  file: src="{{ role_path }}/files/setting" dest=$HOME/.vim/setting state=link
+- name: remove setting
+  file: path=$HOME/.vimrc state=absent
+- name: make vimrc
+  copy:
+    content: 'runtime! setting/vimrc'
+    dest: $HOME/.vimrc

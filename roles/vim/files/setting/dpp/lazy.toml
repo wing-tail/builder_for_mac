@@ -1,0 +1,31 @@
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+depends = ['ddu.vim', 'ddc.vim']
+on_source = ['ddu.vim']
+hooks_file = '$DPP_DIR/deol.vim'
+
+[[plugins]]
+repo = 'previm/previm'
+on_cmd = 'PrevimOpen'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+on_ft = 'go'
+hook_source = '''
+  let g:goimports_simplify = v:true
+'''
+
+[[plugins]]
+repo = 'dag/vim2hs'
+on_ft = 'haskell'
+hook_source = '''
+  let g:haskell_conceal = v:false
+'''
+
+[[plugins]]
+repo = 'kaarmu/typst.vim'
+on_ft = 'typst'

@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: sudo_password
+      prompt: "Enter your password (for installer, not for brew)"
+      private: yes
+  roles:
+    - homebrew
+    - vim

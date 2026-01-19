@@ -1,0 +1,110 @@
+hooks_file = '$DPP_DIR/ft.vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'Shirk/vim-gas'
+
+[[plugins]]
+repo = 'vim-jp/syntax-vim-ex'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+
+[[plugins]]
+repo = 'leafOfTree/vim-vue-plugin'
+hook_add = '''
+let g:vim_vue_plugin_config = {
+  \    'syntax': {
+  \      'template': ['html', 'pug'],
+  \      'script': ['javascript', 'typescript', 'coffee'],
+  \      'style': ['css', 'scss', 'sass', 'less', 'stylus'],
+  \      'i18n': ['json', 'yaml'],
+  \      'route': 'json',
+  \    },
+  \    'full_syntax': ['json'],
+  \    'initial_indent': ['i18n', 'i18n.json', 'yaml'],
+  \    'attribute': 1,
+  \    'keyword': 1,
+  \    'foldexpr': 1,
+  \    'debug': 0,
+  \  }
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim', 'vim-textobj-user', 'vim-quickrun']
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  map <C-d> :NERDTreeToggle<CR>
+  MyAutoCmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+'''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  MyAutoCmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+  MyAutoCmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+'''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  "モード表示はlightline任せ
+  set noshowmode
+  set laststatus=2
+  let g:lightline = {
+    \   'active': {
+    \     'left': [
+    \       ['mode', 'paste'],
+    \       ['readonly', 'filename', 'modified']
+    \     ],
+    \     'right': [
+    \       ['lineinfo'],
+    \       ['percent'],
+    \       ['fileformat', 'fileencoding', 'filetype']
+    \     ],
+    \   },
+    \ }
+'''
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'jeffkreeftmeijer/vim-numbertoggle'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+  MyAutoCmd BufWritePre * :FixWhitespace
+'''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
