@@ -2,6 +2,7 @@ homebrew_packages:
   - name: ansible
   - name: deno
   - name: git
+  - name: gh
   - name: pre-commit
   - name: ripgrep
   - name: tig
@@ -20,9 +21,10 @@ homebrew_packages:
   - name: fnm
   - name: uv
 homebrew_casks:
-  - name: kitty
+  - name: cmux
   - name: google-chrome
   - name: google-japanese-ime
+  - name: drawio
   - name: texturepacker
   - name: visual-studio-code
   - name: cursor
