@@ -27,6 +27,5 @@ homebrew_casks:
   - name: drawio
   - name: texturepacker
   - name: visual-studio-code
-  - name: cursor
-  - name: claude-code
+  - name: claude-code@latest
   - name: codex
